@@ -95,6 +95,8 @@ global $themify;
 		
 					<?php if(is_search()): ?>
 						<?php get_template_part( 'includes/loop' , 'search'); ?>
+					<?php elseif(is_category() || is_tag() || is_date()): ?>
+						<?php get_template_part( 'includes/loop-title' , 'index'); ?>
 					<?php else: ?>
 						<?php get_template_part( 'includes/loop' , 'index'); ?>
 					<?php endif; ?>
