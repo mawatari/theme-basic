@@ -3903,7 +3903,7 @@ if ( ! function_exists( 'themify_get_author_link' ) ) {
 	 * @since 1.7.4
 	 */
 	function themify_get_author_link() {
-		$output = '<span class="author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author" itemprop="url"><span itemprop="name">' . get_the_author() . '</span></a></span>';
+		$output = '<span class="author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person"><a class="url fn" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author" itemprop="url"><span itemprop="name">' . get_the_author() . '</span></a></span>';
 		return $output;
 	}
 }
