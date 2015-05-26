@@ -38,12 +38,13 @@ add_filter('the_title', function($title) {
 
 	// タイトルに関心度数を表示する
 	$interestCount = $count == 1 ? '1 interest' : $count . ' interests';
+	$interestClass = 'interest';
 	if ($count <= 3) {
-		$interestClass = 'interest interest-low';
+		$interestClass .= ' interest-low';
 	} elseif ($count <= 10) {
-		$interestClass = 'interest interest-middle';
+		$interestClass .= ' interest-middle';
 	} else {
-		$interestClass = 'interest interest-high';
+		$interestClass .= ' interest-high';
 	}
 
 	return  $title . '<span class="' . $interestClass . '">' . $interestCount . '</span>';
