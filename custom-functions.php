@@ -23,6 +23,10 @@ add_filter('the_title', function($title) {
 	if ($title != $post->post_title)
 		return $title;
 
+	// 個別ページのタイトルはサーチエンジンに使われることがあるのでreturn
+	if (is_single() && in_the_loop())
+		return $title;
+
 	// プラグインが有効でない場合はreturn
 	if (!function_exists('scc_get_share_total'))
 		return $title;
