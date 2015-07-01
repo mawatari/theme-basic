@@ -27,6 +27,10 @@ add_filter('the_title', function($title) {
 	if (is_single() && in_the_loop())
 		return $title;
 
+	// Feedである場合はreturn
+	if (is_feed())
+		return $title;
+
 	// プラグインが有効でない場合はreturn
 	if (!function_exists('scc_get_share_total'))
 		return $title;
